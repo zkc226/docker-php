@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM alpine:3.6
+FROM alpine:3.4
 
 # persistent / runtime deps
 ENV PHPIZE_DEPS \
@@ -18,8 +18,9 @@ ENV PHPIZE_DEPS \
 		pcre-dev \
 		pkgconf \
 		re2c
-RUN echo 'http://mirrors.aliyun.com/alpine/v3.6/main' > /etc/apk/repositories && \
-	echo 'http://mirrors.aliyun.com/alpine/v3.6/community' >> /etc/apk/repositories
+
+RUN echo 'http://mirrors.aliyun.com/alpine/v3.4/main' > /etc/apk/repositories && \
+	echo 'http://mirrors.aliyun.com/alpine/v3.4/community' >> /etc/apk/repositories
 
 RUN apk add --no-cache --virtual .persistent-deps \
 		ca-certificates \
